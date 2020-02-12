@@ -5,39 +5,35 @@
     <description>Scout Background</description>
     <author url="https://github.com/Pushingthrough12/Aurora-Aereni-Elf">u/Pushingthrough12</author>
     <update version="0.0.1">
-      <file name="scout-background.xml" url="https://raw.githubusercontent.com/community-elements/elements-reddit/master/reddit/reddit-dnd/backgrounds/background-bodyguard.xml" />
+      <file name="scout-background.xml" url="https://raw.githubusercontent.com/Pushingthrough12/Aurora-Homebrew/master/scout-background.xml" />
     </update>
   </info>
 
-  <element name="Bodyguard" type="Background" source="Reddit: DnD" id="ID_RDDT_BACKGROUND_BODYGUARD">
+  <element name="Scout" type="Background" source="Silverware DnD" id="ID_SLV_BACKGROUND_SCOUT">
     <description>
-      <p>You have spent your life protecting someone else’s. Perhaps it was a noble, or a powerful crime boss; maybe even a brutal warlord. Maybe instead of someone more powerful than you, it was a physically weaker companion or family member. Whatever the case, your life up to this point has been focused around protecting someone.</p>
+      <p>You are up to the missions of the scout initiative. </p>
       <ul class="unstyled">
         <li>
-          <strong>Skill Proficiencies:</strong> Choose two from Insight, Intimidation, and Perception
+          <strong>Skill Proficiencies:</strong> Choose two Skills.
+        </li>
+       
+        <li>
+          <strong>Tool Proficiencies:</strong> Choose two Tools
         </li>
         <li>
-          <strong>Languages:</strong> One of your choice
-        </li>
-        <li>
-          <strong>Tool Proficiencies:</strong> Vehicles (land)
-        </li>
-        <li>
-          <strong>Equipment:</strong> A symbol or keepsake from one of the people you guarded (possibly denoting rank), a book of troublemakers who caused continuous problems for one of your charges, a pair of manacles, a set of common clothes, and a belt pouch containing 10 gp
+          <strong>Equipment:</strong> Monocular, Compass, Local Area Map, Traveler's Clothes, Explorer's Pack, Pouch containing 10g
         </li>
       </ul>
-      <div element="ID_RDDT_BACKGROUND_FEATURE_BODYGUARD_GUARDIANS_EYE" />
+      <div element="ID_SLV_BACKGROUND_FEATURE_SCOUT_NETWORK" />
       <h5>SUGGESTED CHARACTERISTICS</h5>
-      <p>Body guards are generally good at protecting; whether they’re protective by nature or simply good at their job is up to you. Their skill at guarding and noticing dangers, as well as their relationship to their charges, affect how they act and think. Their flaws could be being overly protective or hesitant, or maybe something that somehow compromises their guarding abilities.</p>
+      <p>Scouts are generally good at reconnaissance. Their skill at finding and tracking down targets, as well as their relationship to their charges, affect how they act and think.</p>
     </description>
-    <setters>
-      <set name="sourceUrl">https://www.reddit.com/r/DnD/comments/7uxd9p/5e_background_the_bodyguard/</set>
-    </setters>
     <rules>
-      <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
-      <select type="Proficiency" number="2" supports="ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_PERCEPTION" />
-      <select type="Language" name="Language (Bodyguard)" number="1"/>
-      <grant type="Background Feature" id="ID_RDDT_BACKGROUND_FEATURE_BODYGUARD_GUARDIANS_EYE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+     
+      <select type="Proficiency" number="2" supports="Skill" />
+      <select type="Proficiency" supports="Tool" number="2" />
+      <grant type="Background Feature" id="ID_SLV_BACKGROUND_FEATURE_SCOUT_INITIATIVE_SPELLS" />
+      <grant type="Background Feature" id="ID_SLV_BACKGROUND_FEATURE_SCOUT_NETWORK" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
       <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
       <select name="Personality Trait" type="List" optional="true" number="2">
         <item id="1">I am always quiet and stoic, rarely speaking or acting when I work.</item>
@@ -76,12 +72,89 @@
     </rules>
   </element>
 
-  <element name="Feature: Guardian’s Eye" type="Background Feature" source="Reddit: DnD" id="ID_RDDT_BACKGROUND_FEATURE_BODYGUARD_GUARDIANS_EYE">
+  <element name="Feature: Network" type="Background Feature" source="Silverware DnD" id="ID_SLV_BACKGROUND_FEATURE_SCOUT_NETWORK">
     <supports>Background Feature</supports>
     <description>
-      <p>I have a keen eye when it comes to safety. My companions and I can travel at a normal speed through crowds; and I can always pick out the safest route to take through a town or city. This doesn’t account for unseen or hidden dangers, such as a lair of vampires hiding in the noble quarter; but I can easily avoid slums and areas where thugs might hang around.</p>
+      <p>I have a keen eye when it comes to reconnaisance. My companions and I can travel through woods easily; and I can always pick out the safest route to take through wilderness. This doesn’t account for unseen, hidden or dangers that are not yet reported. But I can easily avoid nests and areas where feral beasts might hang around.
+      You can contact local scout establishment for information on local hazards, general information and tips on the area. You can additionaly give report on situations where scout initiative would help you by giving additional info on a specific subject or a person. You always have to report back on major events. Scout initiative can be subject to hierarchy and reputation by DM's discretion.</p>
     </description>
-    <sheet alt="Guardian’s Eye" />
+    <sheet alt="Network" />
   </element>
-
+  <element name="Scout Initiative Spells" type="Background Feature" source="Silverware DnD" id="ID_SLV_BACKGROUND_FEATURE_SCOUT_INITIATIVE_SPELLS">
+    <description>
+      <p>
+        <em>Prerequisite: Spellcasting or Pact Magic class feature</em>
+      </p>
+      <p>For you, the spells on the Scout Initiative Spells table are added to the spell list of your spellcasting class. (If you are a multiclass character with multiple spell lists, these spells are added to all of them.)</p>
+      <h5>SCOUT INITIATIVE SPELLS</h5>
+      <table>
+        <thead>
+          <tr>
+            <td>Spell Level</td>
+            <td>Spells</td>
+          </tr>
+        </thead>
+        <tr>
+          <td>Cantrip</td>
+          <td>
+            <em>message, guidance</em>
+          </td>
+        </tr>
+        <tr>
+          <td>1st</td>
+          <td>
+            <em>wild cunning, comprehend languages, disguise self</em>
+          </td>
+        </tr>
+        <tr>
+          <td>2nd</td>
+          <td>
+            <em>animal messenger, suggestion, pass without trace</em>
+          </td>
+        </tr>
+        <tr>
+          <td>3rd</td>
+          <td>
+            <em>clairvoyance, gaseous form, sending</em>
+          </td>
+        </tr>
+        <tr>
+          <td>4th</td>
+          <td>
+            <em>arcane eye, dimension door, greater invisibility</em>
+          </td>
+        </tr>
+        <tr>
+          <td>5th</td>
+          <td>
+            <em>commune with nature, scrying, seeming </em>
+          </td>
+        </tr>
+      </table>
+      <p class="indent">If you use a spell focus, it probably has the form with an emblem of the scout initiative. Characters sees the emblem with a wisdom score of 12 or higher knows that you are a scout.</p>
+      <p class="indent">Knack for information and curiosity sometimes leads you to a danger.</p>
+    </description>
+    <sheet>
+      <description> </description>
+    </sheet>
+    <spellcasting all="true" extend="true">
+      <extend>ID_PHB_SPELL_MESSAGE</extend>
+      <extend>ID_PHB_SPELL_GUIDANCE</extend>
+      <extend>ID_GGTR_SPELL_WILD_CUNNING</extend>
+      <extend>ID_PHB_SPELL_COMPREHEND_LANGUAGES</extend>
+      <extend>ID_PHB_SPELL_DISGUISE_SELF</extend>
+      <extend>ID_PHB_SPELL_ANIMAL_MESSENGER</extend>
+      <extend>ID_PHB_SPELL_SUGGESTION</extend>
+      <extend>ID_PHB_SPELL_PASS_WITHOUT_TRACE</extend>
+      <extend>ID_PHB_SPELL_CLAIRVOYANCE</extend>
+      <extend>ID_PHB_SPELL_GASEOUS_FORM</extend>
+      <extend>ID_PHB_SPELL_SENDING</extend>
+      <extend>ID_PHB_SPELL_ARCANE_EYE</extend>
+      <extend>ID_PHB_SPELL_DIMENSION_DOOR</extend>
+      <extend>ID_PHB_SPELL_GREATER_INVISIBILITY</extend>
+      <extend>ID_PHB_SPELL_COMMUNE_WITH_NATURE</extend>
+      <extend>ID_PHB_SPELL_SCRYING</extend>
+      <extend>ID_PHB_SPELL_SEEMING</extend>
+    </spellcasting>
+  </element>
 </elements>
