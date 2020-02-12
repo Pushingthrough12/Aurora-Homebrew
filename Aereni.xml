@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<elements>
+  <info>
+    <name>Aerenal High Elf</name>
+    <description>Subrace from the aroro.</description>
+    <author url="https://github.com/Pushingthrough12/Aurora-Aereni-Elf">u/Pushingthrough12</author>
+    <update version="0.1.2">
+      <file name="Aereni.xml" url="https://raw.githubusercontent.com/Pushingthrough12/Aurora-Aereni-Elf/master/Aereni.xml" />
+    </update> 
+  </info>
+  <element name="Aereni HE" type="Sub Race" source="Aroro" id="ID_ARORO_SUBRACE_AERENI" >
+    <supports>Elf</supports>
+    <description>
+      <p>Creatures of magic with strong ties to nature, aereni live in the twilight realm of the Feywild. Their cities sometimes cross over to the Material Plane, appearing briefly in mountain valleys or deep forest glades before fading back into the Feywild.</p>
+      <p class="indent">
+        <strong>
+          <em>Ability Score Increase.</em>
+        </strong> Your Intelligence score increases by 1.
+      </p>
+      <p class="indent">
+        <strong>
+          <em> Aereni Skill</em>
+        </strong> You have proficiency with a Skill or Tool. Double the bonus.
+      <span class="feature">Cantrip.</span>You know one cantrip of your choice from the Wizard spell list. Intelligence is your spellcasting ability for it.<br />
+    </p>
+    </description>
+   
+    
+    <sheet display="false" />
+    <rules>
+      <stat name="intelligence" value="1" />
+      <select type="Proficiency" name="Proficiency (Tajuru Elf)" supports="Tool||Skill" number="1" />
+      <select type="Spell" name="Cantrip (Aereni)" supports="Wizard,0" />
+      <grant type="Racial Trait" id="ID_RACIAL_TRAIT_EXTRA_LANGUAGE" />
+      <select type="Class Feature" name="Expertise (Skilled and Witty)" number="1" supports="ID_INTERNAL_SUPPORT_EXPERTISE"/>
+   
+    </rules>
+  </element>
+  
+</elements>
