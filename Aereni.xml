@@ -29,10 +29,10 @@
     <sheet display="false" />
     <rules>
       <stat name="intelligence" value="1" />
-      <select type="Proficiency" name="Proficiency (Aereni Elf)" supports="Tool||Skill" number="1" bonus="double" />
+      <select type="Proficiency" name="Proficiency (Aereni Elf)" supports="Tool||Skill" number="1" />
       <select type="Spell" name="Cantrip (Aereni)" supports="Wizard,0" />
       <grant type="Racial Trait" id="ID_RACIAL_TRAIT_EXTRA_LANGUAGE" />
-     
+      <stat name="insight:proficiency" value="proficiency" bonus="double" />
    
     </rules>
   </element>
